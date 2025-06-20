@@ -1,5 +1,5 @@
 :root {
-  /* KAVIA/ZodiacPulse colors and theme variables */
+  /* KAVIA/ZodiacPulse colors and base theme variables */
   --primary: #00ffff;
   --primary-dark: #00008b;
   --kavia-orange: #e87a41;
@@ -12,6 +12,19 @@
   --border-color: rgba(255,255,255,0.14);
   --error-color: #ff4c51;
   --error-bg: rgba(255,72,86,0.06);
+
+  /* Font and button colors (CSS variables for theme adaptivity) */
+  --navbar-bg: var(--background);
+  --navbar-font-color: var(--primary); /* fallback for logo only */
+  --navbar-button-bg: var(--primary);
+  --navbar-button-text: #151b2c;
+  --navbar-button-hover-bg: var(--primary-dark);
+  --navbar-button-hover-text: var(--primary);
+
+  --button-bg: var(--primary);
+  --button-text-color: var(--primary-dark);
+  --button-hover-bg: var(--primary-dark);
+  --button-hover-text: var(--primary);
 }
 
 html.light, :root.light, body.light {
@@ -24,6 +37,17 @@ html.light, :root.light, body.light {
   --error-color: #d60026;
   --primary: #006879;
   --accent: #3360f6;
+
+  /* NavBar and button color overrides (light mode) */
+  --navbar-bg: #ffffff;
+  --navbar-font-color: var(--primary);
+  --navbar-button-bg: var(--primary);
+  --navbar-button-text: var(--primary-dark);
+
+  --button-bg: var(--primary);
+  --button-text-color: var(--primary-dark);
+  --button-hover-bg: var(--primary-dark);
+  --button-hover-text: var(--primary);
 }
 
 html.dark, :root.dark, body.dark {
@@ -36,6 +60,19 @@ html.dark, :root.dark, body.dark {
   --primary: #00ffff;
   --accent: #3360f6;
   --error-color: #ff4c51;
+
+  --navbar-bg: #0d1724;
+  --navbar-font-color: var(--primary);
+
+  --navbar-button-bg: var(--primary);
+  --navbar-button-text: #151b2c; /* dark button text on accent */
+  --navbar-button-hover-bg: var(--primary-dark);
+  --navbar-button-hover-text: var(--primary);
+
+  --button-bg: var(--primary);
+  --button-text-color: var(--primary-dark);
+  --button-hover-bg: var(--primary-dark);
+  --button-hover-text: var(--primary);
 }
 
 body {
@@ -67,9 +104,9 @@ body {
 }
 
 .navbar {
-  background: var(--background);
+  background: var(--navbar-bg, var(--background));
   box-shadow: 0 2px 10px 0 rgba(0,40,100,0.10);
-  padding: 0.75rem 0;
+  padding: 0.88rem 0 0.95rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,14 +116,15 @@ body {
   width: 100%;
   z-index: 100;
 }
+
 .logo {
-  font-size: 1.22rem;
+  font-size: 1.34rem;
   font-weight: 700;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--primary);
+  color: var(--navbar-font-color, var(--primary));
   user-select: none;
 }
 
@@ -193,81 +231,81 @@ body {
 }
 
 /* NavBar buttons enhancements */
-.navbar .btn, .navbar .btn-large {
-  min-width: 60px !important;
-  min-height: 50px !important;
-  max-width: unset !important;
-  max-height: unset !important;
+.navbar .btn,
+.navbar .btn-large {
+  min-width: 84px !important;
+  min-height: 54px !important;
   width: auto !important;
   height: auto !important;
-  font-size: 1.13rem;
+  font-size: 1.18rem !important;
   font-weight: 700;
-  color: var(--button-text-color, var(--text-color)) !important;
+  color: var(--navbar-button-text, var(--button-text-color, var(--text-color))) !important;
   letter-spacing: 0.01em;
   box-shadow: none;
-  padding: 0.7em 1.7em !important;
-  border-radius: 8px;
+  padding: 0.95em 2.3em !important;
+  border-radius: 14px !important;
   position: relative;
-  background: var(--button-bg, var(--primary));
+  background: var(--navbar-button-bg, var(--button-bg, var(--primary)));
   transition: 
-    background 0.2s cubic-bezier(.3,0,.65,1),
-    color 0.18s cubic-bezier(.55,0,.55,1),
+    background 0.22s cubic-bezier(.3,0,.65,1),
+    color 0.20s cubic-bezier(.55,0,.55,1),
     box-shadow 0.19s cubic-bezier(.86,0,.07,1),
     transform 0.13s cubic-bezier(.4,0,.2,1);
   outline: none;
+  margin-left: 14px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
-:root {
-  --button-bg: var(--primary);
-  --button-text-color: var(--primary-dark);
+.navbar .btn:first-child,
+.navbar .btn-large:first-child {
+  margin-left: 0;
 }
-html.light, :root.light, body.light {
-  --button-bg: var(--primary);
-  --button-text-color: var(--primary-dark);
-}
-html.dark, :root.dark, body.dark {
-  --button-bg: var(--primary);
-  --button-text-color: #151b2c;
-}
+
+/* -- intentionally left blank. All button color variables are now defined above for each theme. -- */
 
 /* Ensure NavBar button text remains visible in all states */
 .navbar .btn, 
 .navbar .btn-large, 
 .navbar .btn:active, 
 .navbar .btn-large:active {
-  color: var(--button-text-color, var(--text-color)) !important;
-  background: var(--button-bg, var(--primary));
+  color: var(--navbar-button-text, var(--button-text-color, var(--text-color))) !important;
+  background: var(--navbar-button-bg, var(--button-bg, var(--primary)));
+  box-shadow: none !important;
 }
 
-/* On hover, invert button colors for accessibility */
+/* On hover, invert button colors for accessibility and emphasis */
 .navbar .btn:hover, .navbar .btn-large:hover {
   box-shadow: 0 0 0 5px var(--primary) !important;
-  color: var(--primary) !important;
-  background: var(--primary-dark) !important;
-  filter: brightness(1.08);
-  z-index: 1;
+  color: var(--navbar-button-hover-text, var(--primary)) !important;
+  background: var(--navbar-button-hover-bg, var(--primary-dark)) !important;
+  filter: brightness(1.10);
+  z-index: 2;
 }
 
-/* Active/selected mode */
+/* Active/selected mode: make it clear and high-contrast */
 .navbar .btn.btn-large,
-.navbar .btn-large {
-  color: var(--primary-dark, #181f36) !important;
+.navbar .btn-large,
+.navbar .btn.selected {
+  color: #fff !important;
   background: var(--accent, #3099ff) !important;
+  border: 1.2px solid var(--accent, #3360f6) !important;
 }
 
 /* Touch feedback */
 .navbar .btn:active,
 .navbar .btn-large:active {
   transform: scale(0.98);
+  box-shadow: 0 0 4px 2px var(--primary) !important;
 }
 
-/* Font sizing for extra clarity */
 .navbar .btn,
 .navbar .btn-large {
-  font-size: 1.17rem;
+  font-size: 1.18rem;
   font-weight: 700;
-  padding: 0.85em 2.1em !important;
-  border-radius: 12px;
+  padding: 0.97em 2.3em !important;
+  border-radius: 14px !important;
   letter-spacing: 0.01em;
 }
 
@@ -276,10 +314,11 @@ html.dark, :root.dark, body.dark {
     padding: 13px 3px;
   }
   .btn, .btn-large, .navbar .btn, .navbar .btn-large {
-    padding: 0.55em 1.2em !important;
-    font-size: 1.02rem !important;
+    padding: 0.63em 1.17em !important;
+    font-size: 1.09rem !important;
     min-width: 0 !important;
     width: auto !important;
+    border-radius: 11px !important;
   }
   .title {
     font-size: 2.2rem;
