@@ -27,12 +27,8 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
           letterSpacing: "1px",
           display: "flex",
           alignItems: "center",
-          gap: 8,
           userSelect: "none"
         }}>
-          <span className="logo-symbol" role="img" aria-label="logo" style={{ color: "#e87a41", fontSize: "1.4rem" }}>
-            ★
-          </span>
           ZodiacPulse Lite
         </div>
         {/* Navigation tabs */}
@@ -50,8 +46,7 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
                 boxShadow: activeTab === t.key ? "0 3px 12px 0 #3360f633" : undefined
               }}
             >
-              <span style={{ marginRight: 6 }}>{t.emoji}</span>
-              <span style={{ display: "inline" }}>{t.label}</span>
+              {t.label}
             </button>
           ))}
           <button
@@ -66,7 +61,7 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
             onClick={toggleTheme}
             aria-label="toggle dark mode"
           >
-            {theme === "dark" ? "🌙" : "🌞"}
+            {theme === "dark" ? "Dark" : "Light"}
           </button>
         </div>
       </div>
