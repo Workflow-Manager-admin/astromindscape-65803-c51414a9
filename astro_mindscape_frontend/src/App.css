@@ -303,6 +303,20 @@ body {
   transition: color 0.18s;
 }
 
+/* Light mode adjustment for logo/icon -- ensure high contrast */
+:root.light .navbar-logo,
+:root.light .logo,
+:root.light .logo-symbol {
+  color: #151b2c !important;        /* Highly visible dark accent */
+}
+:root.light .logo-symbol {
+  color: #151b2c !important;        /* Make icon dark in light mode */
+}
+:root.light .logo-hamburger-icon span {
+  background: #151b2c !important;
+  box-shadow: 0 0 2px #151b2c !important;
+}
+
 /* Hamburger icon transition for ZodiacPulse NavBar logo */
 .logo-hamburger {
   cursor: pointer;
@@ -352,6 +366,19 @@ body {
 .logo-symbol {
   color: var(--kavia-orange);
   font-size: 1.4rem;
+}
+
+/* Explicit dark mode override for logo/icon (optional for robustness) */
+:root.dark .navbar-logo,
+:root.dark .logo {
+  color: var(--navbar-font-color, var(--primary)) !important;
+}
+:root.dark .logo-symbol {
+  color: var(--kavia-orange) !important;
+}
+:root.dark .logo-hamburger-icon span {
+  background: #fff !important;
+  box-shadow: 0 0 2px #fff !important;
 }
 
 .container {
