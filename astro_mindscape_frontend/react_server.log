@@ -34,3 +34,457 @@ cached modules 1.39 MiB [cached] 97 modules
 runtime modules 27.5 KiB 14 modules
 ./src/HousesData.js 2.81 KiB [built] [code generated]
 webpack 5.99.9 compiled successfully in 144 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.42 MiB
+  asset bundle.js 1.4 MiB [emitted] (name: main)
+  asset main.f118a39b57b78b1e9a57.hot-update.js 12.5 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.f118a39b57b78b1e9a57.hot-update.json 2.53 KiB [emitted] [immutable] [hmr]
+Entrypoint main 1.42 MiB = bundle.js 1.4 MiB main.f118a39b57b78b1e9a57.hot-update.js 12.5 KiB
+cached modules 1.27 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 6.84 KiB [built] [code generated]
+
+ERROR in ./src/App.js 4:0-30
+Module not found: Error: Can't resolve './NavBar' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 5:0-46
+Module not found: Error: Can't resolve './ZodiacSelector' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 6:0-48
+Module not found: Error: Can't resolve './DailyPrediction' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 7:0-40
+Module not found: Error: Can't resolve './SignProfile' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 8:0-46
+Module not found: Error: Can't resolve './PlanetMeanings' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 9:0-38
+Module not found: Error: Can't resolve './HouseGuide' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+7 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 7 errors in 142 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.42 MiB
+  asset bundle.js 1.41 MiB [emitted] (name: main)
+  asset main.08193bf9221ba15711a2.hot-update.js 16.4 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.08193bf9221ba15711a2.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.42 MiB = bundle.js 1.41 MiB main.08193bf9221ba15711a2.hot-update.js 16.4 KiB
+cached modules 1.27 MiB [cached] 41 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 9.39 KiB
+  ./src/App.js 6.84 KiB [code generated]
+  ./src/NavBar.js 2.55 KiB [built] [code generated]
+
+ERROR in ./src/App.js 5:0-46
+Module not found: Error: Can't resolve './ZodiacSelector' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 6:0-48
+Module not found: Error: Can't resolve './DailyPrediction' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 7:0-40
+Module not found: Error: Can't resolve './SignProfile' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 8:0-46
+Module not found: Error: Can't resolve './PlanetMeanings' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 9:0-38
+Module not found: Error: Can't resolve './HouseGuide' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 86 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.43 MiB
+  asset bundle.js 1.41 MiB [emitted] (name: main)
+  asset main.3e51e32dd872067f0c48.hot-update.js 15 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.3e51e32dd872067f0c48.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.43 MiB = bundle.js 1.41 MiB main.3e51e32dd872067f0c48.hot-update.js 15 KiB
+cached modules 1.27 MiB [cached] 42 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 8.05 KiB
+  ./src/App.js 6.84 KiB [code generated]
+  ./src/ZodiacSelector.js 1.21 KiB [built] [code generated]
+
+ERROR in ./src/App.js 6:0-48
+Module not found: Error: Can't resolve './DailyPrediction' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 7:0-40
+Module not found: Error: Can't resolve './SignProfile' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 8:0-46
+Module not found: Error: Can't resolve './PlanetMeanings' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 9:0-38
+Module not found: Error: Can't resolve './HouseGuide' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/ZodiacSelector.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 5:0-46 87:39-53
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 63 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.44 MiB
+  asset bundle.js 1.42 MiB [emitted] (name: main)
+  asset main.cfcc8386d4a383f38dd6.hot-update.js 19.1 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.cfcc8386d4a383f38dd6.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.44 MiB = bundle.js 1.42 MiB main.cfcc8386d4a383f38dd6.hot-update.js 19.1 KiB
+cached modules 1.27 MiB [cached] 43 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 11.3 KiB
+  ./src/App.js 6.84 KiB [code generated]
+  ./src/DailyPrediction.js 4.48 KiB [built] [code generated]
+
+ERROR in ./src/App.js 7:0-40
+Module not found: Error: Can't resolve './SignProfile' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 8:0-46
+Module not found: Error: Can't resolve './PlanetMeanings' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 9:0-38
+Module not found: Error: Can't resolve './HouseGuide' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/DailyPrediction.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 6:0-48 91:32-47
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/ZodiacSelector.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 5:0-46 87:39-53
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 93 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.44 MiB
+  asset bundle.js 1.42 MiB [emitted] (name: main)
+  asset main.e76ab96b016ad4f80cad.hot-update.js 17 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.e76ab96b016ad4f80cad.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.44 MiB = bundle.js 1.42 MiB main.e76ab96b016ad4f80cad.hot-update.js 17 KiB
+cached modules 1.28 MiB [cached] 44 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 9.62 KiB
+  ./src/App.js 6.84 KiB [code generated]
+  ./src/SignProfile.js 2.78 KiB [built] [code generated]
+
+ERROR in ./src/App.js 8:0-46
+Module not found: Error: Can't resolve './PlanetMeanings' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 9:0-38
+Module not found: Error: Can't resolve './HouseGuide' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/DailyPrediction.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 6:0-48 91:32-47
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/SignProfile.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 7:0-40 96:49-60
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/ZodiacSelector.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 5:0-46 87:39-53
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 47 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.44 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.36356f354e230367392a.hot-update.js 15.6 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.36356f354e230367392a.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.44 MiB = bundle.js 1.43 MiB main.36356f354e230367392a.hot-update.js 15.6 KiB
+cached modules 1.28 MiB [cached] 45 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 8.42 KiB
+  ./src/App.js 6.84 KiB [code generated]
+  ./src/PlanetMeanings.js 1.57 KiB [built] [code generated]
+
+ERROR in ./src/App.js 9:0-38
+Module not found: Error: Can't resolve './HouseGuide' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/DailyPrediction.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 6:0-48 91:32-47
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/PlanetMeanings.js 2:0-40
+Module not found: Error: Can't resolve './planetsData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 8:0-46 99:49-63
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/SignProfile.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 7:0-40 96:49-60
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/ZodiacSelector.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 5:0-46 87:39-53
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 79 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.44 MiB
+  asset bundle.js 1.43 MiB [emitted] (name: main)
+  asset main.930efc3880e650cfd9a1.hot-update.js 15 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.930efc3880e650cfd9a1.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.44 MiB = bundle.js 1.43 MiB main.930efc3880e650cfd9a1.hot-update.js 15 KiB
+cached modules 1.28 MiB [cached] 46 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 8.35 KiB
+  ./src/App.js 6.84 KiB [code generated]
+  ./src/HouseGuide.js 1.51 KiB [built] [code generated]
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/DailyPrediction.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 6:0-48 91:32-47
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/HouseGuide.js 2:0-38
+Module not found: Error: Can't resolve './housesData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 9:0-38 101:48-58
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/PlanetMeanings.js 2:0-40
+Module not found: Error: Can't resolve './planetsData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 8:0-46 99:49-63
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/SignProfile.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 7:0-40 96:49-60
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/ZodiacSelector.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 5:0-46 87:39-53
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 46 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.46 MiB
+  asset bundle.js 1.44 MiB [emitted] (name: main)
+  asset main.571b94d106186be6c3ba.hot-update.js 23 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.571b94d106186be6c3ba.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.46 MiB = bundle.js 1.44 MiB main.571b94d106186be6c3ba.hot-update.js 23 KiB
+cached modules 1.28 MiB [cached] 47 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 14.7 KiB
+  ./src/App.js 6.84 KiB [code generated]
+  ./src/AstroGames.js 7.82 KiB [built] [code generated]
+
+ERROR in ./src/AstroGames.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 103:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/DailyPrediction.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 6:0-48 91:32-47
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/HouseGuide.js 2:0-38
+Module not found: Error: Can't resolve './housesData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 9:0-38 101:48-58
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/PlanetMeanings.js 2:0-40
+Module not found: Error: Can't resolve './planetsData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 8:0-46 99:49-63
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/SignProfile.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 7:0-40 96:49-60
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/ZodiacSelector.js 2:0-38
+Module not found: Error: Can't resolve './zodiacData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 5:0-46 87:39-53
+ @ ./src/index.js 5:0-24 11:32-35
+
+6 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 6 errors in 120 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.49 MiB
+  asset bundle.js 1.45 MiB [emitted] (name: main)
+  asset main.586755a1224bbbc1f50d.hot-update.js 39.5 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.586755a1224bbbc1f50d.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.45 MiB main.586755a1224bbbc1f50d.hot-update.js 39.5 KiB
+cached modules 1.28 MiB [cached] 45 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 28.6 KiB
+  ./src/ZodiacSelector.js 1.21 KiB [code generated]
+  ./src/DailyPrediction.js 4.48 KiB [code generated]
+  ./src/SignProfile.js 2.78 KiB [code generated]
+  ./src/AstroGames.js 7.82 KiB [code generated]
+  ./src/zodiacData.js 12.3 KiB [built] [code generated]
+
+ERROR in ./src/HouseGuide.js 2:0-38
+Module not found: Error: Can't resolve './housesData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+resolve './housesData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+  using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src/housesData)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData doesn't exist
+ @ ./src/App.js 9:0-38 101:48-58
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/PlanetMeanings.js 2:0-40
+Module not found: Error: Can't resolve './planetsData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+resolve './planetsData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+  using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src/planetsData)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/planetsData doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/planetsData.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/planetsData.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/planetsData doesn't exist
+ @ ./src/App.js 8:0-46 99:49-63
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 91 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.46 MiB
+  asset bundle.js 1.45 MiB [emitted] (name: main)
+  asset main.85af134a0e06f395bb7b.hot-update.js 6.05 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.85af134a0e06f395bb7b.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.46 MiB = bundle.js 1.45 MiB main.85af134a0e06f395bb7b.hot-update.js 6.05 KiB
+cached modules 1.31 MiB [cached] 49 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.89 KiB
+  ./src/PlanetMeanings.js 1.57 KiB [code generated]
+  ./src/planetsData.js 1.31 KiB [built] [code generated]
+
+ERROR in ./src/HouseGuide.js 2:0-38
+Module not found: Error: Can't resolve './housesData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+resolve './housesData' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+  using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src/housesData)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/housesData doesn't exist
+ @ ./src/App.js 9:0-38 101:48-58
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 44 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.46 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.72c4a01387b94bca66da.hot-update.js 5.93 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.72c4a01387b94bca66da.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.46 MiB = bundle.js 1.46 MiB main.72c4a01387b94bca66da.hot-update.js 5.93 KiB
+cached modules 1.31 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+javascript modules 2.95 KiB
+  ./src/HouseGuide.js 1.51 KiB [code generated]
+  ./src/housesData.js 1.43 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 37 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.47 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.d5d7bafa2561929b9b53.hot-update.js 12.8 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.d5d7bafa2561929b9b53.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.47 MiB = bundle.js 1.46 MiB main.d5d7bafa2561929b9b53.hot-update.js 12.8 KiB
+cached modules 1.3 MiB [cached] 51 modules
+runtime modules 27.5 KiB 14 modules
+./src/AstroGames.js 8.75 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 73 ms
