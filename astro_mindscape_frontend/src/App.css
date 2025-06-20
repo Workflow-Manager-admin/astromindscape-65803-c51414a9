@@ -7,15 +7,17 @@
   --accent: #3360f6;
   --background: #0d1724;
   --white: #ffffff;
+  --black: #10151d;
   --text-color: #f6f8fa;
-  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-secondary: rgba(255, 255, 255, 0.77);
+  --text-contrast: #151b2c;
   --border-color: rgba(255,255,255,0.14);
   --error-color: #ff4c51;
   --error-bg: rgba(255,72,86,0.06);
 
-  /* Font and button colors (CSS variables for theme adaptivity) */
+  /* Font and button colors (CSS variables for theme adaptivity and accessibility) */
   --navbar-bg: var(--background);
-  --navbar-font-color: var(--primary); /* fallback for logo only */
+  --navbar-font-color: var(--primary);
   --navbar-button-bg: var(--primary);
   --navbar-button-text: #151b2c;
   --navbar-button-hover-bg: var(--primary-dark);
@@ -25,29 +27,38 @@
   --button-text-color: var(--primary-dark);
   --button-hover-bg: var(--primary-dark);
   --button-hover-text: var(--primary);
+
+  /* Accessibility focus colors */
+  --focus-outline: 2px solid var(--kavia-orange);
 }
 
 html.light, :root.light, body.light {
   --background: #f3f8fb;
-  --primary-dark: #ffffff;
+  --primary-dark: #fff;
   --kavia-dark: #222222;
-  --text-color: #101a2a;
-  --text-secondary: #4b5575;
+  --text-color: #161f2c;
+  --text-secondary: #42516a;
+  --text-contrast: #11202d;
   --border-color: #d6e4f0;
   --error-color: #d60026;
   --primary: #006879;
-  --accent: #3360f6;
+  --accent: #3578ec;
+  --white: #fff;
+  --black: #161e29;
 
   /* NavBar and button color overrides (light mode) */
   --navbar-bg: #ffffff;
   --navbar-font-color: var(--primary);
   --navbar-button-bg: var(--primary);
-  --navbar-button-text: var(--primary-dark);
+  --navbar-button-text: #fff;
+
+  --navbar-button-hover-bg: #d1f4ff;
+  --navbar-button-hover-text: #006879;
 
   --button-bg: var(--primary);
-  --button-text-color: var(--primary-dark);
-  --button-hover-bg: var(--primary-dark);
-  --button-hover-text: var(--primary);
+  --button-text-color: #fff;
+  --button-hover-bg: #e6f4ff;
+  --button-hover-text: #00374a;
 }
 
 html.dark, :root.dark, body.dark {
@@ -55,31 +66,34 @@ html.dark, :root.dark, body.dark {
   --primary-dark: #00008b;
   --kavia-dark: #1a1a1a;
   --text-color: #f6f8fa;
-  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-contrast: #fff;
   --border-color: rgba(255,255,255,0.14);
   --primary: #00ffff;
   --accent: #3360f6;
   --error-color: #ff4c51;
+  --white: #fff;
+  --black: #191f2a;
 
   --navbar-bg: #0d1724;
   --navbar-font-color: var(--primary);
 
   --navbar-button-bg: var(--primary);
-  --navbar-button-text: #151b2c; /* dark button text on accent */
+  --navbar-button-text: #1b1f33;
   --navbar-button-hover-bg: var(--primary-dark);
-  --navbar-button-hover-text: var(--primary);
+  --navbar-button-hover-text: #00e7df;
 
   --button-bg: var(--primary);
-  --button-text-color: var(--primary-dark);
+  --button-text-color: #141a2b;
   --button-hover-bg: var(--primary-dark);
-  --button-hover-text: var(--primary);
+  --button-hover-text: #00ffff;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.02rem;
-  background: var(--primary-dark);
+  background: var(--background);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -90,7 +104,7 @@ body {
   margin: 0;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.02rem;
-  background: var(--primary-dark);
+  background: var(--background);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -126,6 +140,7 @@ body {
   gap: 8px;
   color: var(--navbar-font-color, var(--primary));
   user-select: none;
+  transition: color 0.18s;
 }
 
 /* Hamburger icon transition for ZodiacPulse NavBar logo */
@@ -233,17 +248,17 @@ body {
 /* NavBar buttons enhancements */
 .navbar .btn,
 .navbar .btn-large {
-  min-width: 84px !important;
-  min-height: 54px !important;
+  min-width: 118px !important;
+  min-height: 56px !important;
   width: auto !important;
   height: auto !important;
-  font-size: 1.18rem !important;
-  font-weight: 700;
+  font-size: 1.32rem !important;
+  font-weight: 800;
   color: var(--navbar-button-text, var(--button-text-color, var(--text-color))) !important;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   box-shadow: none;
-  padding: 0.95em 2.3em !important;
-  border-radius: 14px !important;
+  padding: 1.07em 2.7em !important;
+  border-radius: 16px !important;
   position: relative;
   background: var(--navbar-button-bg, var(--button-bg, var(--primary)));
   transition: 
@@ -252,10 +267,12 @@ body {
     box-shadow 0.19s cubic-bezier(.86,0,.07,1),
     transform 0.13s cubic-bezier(.4,0,.2,1);
   outline: none;
-  margin-left: 14px;
+  margin-left: 15px;
   margin-right: 0;
   margin-bottom: 0;
   margin-top: 0;
+  cursor: pointer;
+  outline: none;
 }
 
 .navbar .btn:first-child,
@@ -273,15 +290,17 @@ body {
   color: var(--navbar-button-text, var(--button-text-color, var(--text-color))) !important;
   background: var(--navbar-button-bg, var(--button-bg, var(--primary)));
   box-shadow: none !important;
+  outline: none !important;
 }
 
 /* On hover, invert button colors for accessibility and emphasis */
 .navbar .btn:hover, .navbar .btn-large:hover {
-  box-shadow: 0 0 0 5px var(--primary) !important;
+  box-shadow: 0 0 0 6px var(--primary) !important;
   color: var(--navbar-button-hover-text, var(--primary)) !important;
   background: var(--navbar-button-hover-bg, var(--primary-dark)) !important;
-  filter: brightness(1.10);
-  z-index: 2;
+  filter: brightness(1.13);
+  z-index: 3;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 
 /* Active/selected mode: make it clear and high-contrast */
@@ -290,35 +309,49 @@ body {
 .navbar .btn.selected {
   color: #fff !important;
   background: var(--accent, #3099ff) !important;
-  border: 1.2px solid var(--accent, #3360f6) !important;
+  border: 1.6px solid var(--accent, #3360f6) !important;
+  text-shadow: 0 0.5px 6px rgba(47,70,150,0.08);
 }
 
 /* Touch feedback */
 .navbar .btn:active,
 .navbar .btn-large:active {
-  transform: scale(0.98);
-  box-shadow: 0 0 4px 2px var(--primary) !important;
+  transform: scale(0.965);
+  box-shadow: 0 2px 9px 2px var(--primary) !important;
+  filter: brightness(0.98);
+}
+
+/* Ensure accessibility: focus state for buttons (keyboard nav) */
+.navbar .btn:focus-visible,
+.navbar .btn-large:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--accent, #3360f6) !important;
+  z-index: 3;
 }
 
 .navbar .btn,
 .navbar .btn-large {
-  font-size: 1.18rem;
-  font-weight: 700;
-  padding: 0.97em 2.3em !important;
-  border-radius: 14px !important;
-  letter-spacing: 0.01em;
+  font-size: 1.32rem;
+  font-weight: 800;
+  padding: 1.1em 2.7em !important;
+  border-radius: 16px !important;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  outline: none;
 }
 
 @media (max-width: 530px) {
   .navbar {
-    padding: 13px 3px;
+    padding: 10px 2px;
   }
-  .btn, .btn-large, .navbar .btn, .navbar .btn-large {
-    padding: 0.63em 1.17em !important;
-    font-size: 1.09rem !important;
-    min-width: 0 !important;
-    width: auto !important;
-    border-radius: 11px !important;
+  .navbar .btn,
+  .navbar .btn-large {
+    padding: 0.7em 1.22em !important;
+    font-size: 1.07rem !important;
+    min-width: 65px !important;
+    min-height: 40px !important;
+    border-radius: 10px !important;
   }
   .title {
     font-size: 2.2rem;
@@ -333,6 +366,7 @@ body {
 .navbar .btn.btn-large,
 .navbar .btn-large {
   color: #fff !important;
+  text-shadow: 0 1.5px 6px rgba(47,70,150,0.10);
 }
 
 .navbar .btn:active,
@@ -393,38 +427,46 @@ body {
 
 /* Base Button */
 .btn {
-  background: var(--primary);
-  color: var(--primary-dark);
+  background: var(--button-bg, var(--primary));
+  color: var(--button-text-color, #161f2c);
   border: none;
-  border-radius: 4.5px;
-  padding: 10px 22px;
-  font-size: 1.05rem;
-  font-weight: 500;
+  border-radius: 6px;
+  padding: 12px 26px;
+  font-size: 1.09rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.18s, transform 0.17s;
-  box-shadow: 0 1px 10px 0 rgba(0, 255, 255, 0.01);
-  margin-right: 2px;
+  transition: background 0.18s, color 0.18s, transform 0.17s, box-shadow 0.18s;
+  box-shadow: 0 1.5px 9px 0 rgba(0, 255, 255, 0.03);
+  margin-right: 3px;
   margin-bottom: 2px;
   outline: none;
+  min-width: 85px;
 }
+
+.btn:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
 .btn:last-child {
   margin-right: 0;
 }
 .btn-large,
 .btn.btn-large {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent, #3360f6);
+  color: var(--white, #fff);
   font-weight: 700;
-  padding: 11px 27px;
-  font-size: 1.13rem;
-  transform: translateY(-1px) scale(1.06);
+  padding: 14px 33px;
+  font-size: 1.20rem;
+  transform: translateY(-1px) scale(1.07);
 }
+
 .btn:hover, .btn-large:hover {
-  background: #48ffe8;
-  color: #202044;
-  filter: brightness(1.06);
-  box-shadow: 0 3px 20px 0 rgba(0,255,255,0.09);
-  transform: translateY(-2px) scale(1.06);
+  background: var(--button-hover-bg, #48ffe8);
+  color: var(--button-hover-text, #202044);
+  filter: brightness(1.08);
+  box-shadow: 0 4px 20px 0 rgba(0,255,255,0.12);
+  transform: translateY(-2.5px) scale(1.085);
 }
 
 main {
@@ -677,9 +719,10 @@ a {
   color: var(--primary);
   text-decoration: underline dotted;
   transition: color 0.16s;
+  font-weight: 500;
 }
 a:hover {
-  color: #00c6a4;
+  color: var(--accent, #00c6a4);
 }
 ::-webkit-scrollbar {
   width: 7px;
@@ -690,25 +733,28 @@ a:hover {
   border-radius: 8px;
   opacity: 0.2;
 }
-::-webkit-input-placeholder { color: #89c7c9; }
-::-moz-placeholder { color: #89c7c9; }
-:-ms-input-placeholder { color: #89c7c9; }
-::placeholder { color: #89c7c9; }
+::-webkit-input-placeholder { color: var(--text-secondary); }
+::-moz-placeholder { color: var(--text-secondary); }
+:-ms-input-placeholder { color: var(--text-secondary); }
+::placeholder { color: var(--text-secondary); }
 
 /* --- Responsive for mobile widths --- */
 @media (max-width: 530px) {
   .navbar {
-    padding: 13px 3px;
+    padding: 9px 2px;
   }
-  .btn, .btn-large {
-    padding: 8px 10px;
-    font-size: 1rem;
+  .btn, .btn-large, .navbar .btn, .navbar .btn-large {
+    padding: 0.55em 0.93em !important;
+    font-size: 0.99rem !important;
+    min-width: 55px !important;
+    min-height: 38px !important;
+    border-radius: 9px !important;
   }
   .title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
   .hero {
-    padding-top: 90px;
-    padding-bottom: 22px;
+    padding-top: 74px;
+    padding-bottom: 17px;
   }
 }
