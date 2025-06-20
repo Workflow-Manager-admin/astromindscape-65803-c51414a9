@@ -474,12 +474,7 @@ body {
 }
 
 
-.navbar .btn:first-child,
-.navbar .btn-large:first-child {
-  margin-left: 0;
-}
-
-/* -- intentionally left blank. All button color variables are now defined above for each theme. -- */
+/* The declarations for font-size, padding, border-radius and font-weight are now handled above for each theme. -- */
 
 /* Ensure NavBar button text remains visible in all states */
 .navbar .btn, 
@@ -948,5 +943,31 @@ a:hover {
   .hero {
     padding-top: 74px;
     padding-bottom: 17px;
+  }
+}
+
+/* Extra modal/fade-in effect for games modal */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* == Mini games modal pop-up effect == */
+.astro-game-modal-blur {
+  /* covers all viewport, blur and fade */
+  animation: fadeIn 0.65s;
+}
+.astro-game-modal-content {
+  animation: fadeIn 0.7s;
+}
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+@media (max-width: 600px) {
+  .astro-game-modal-content {
+    min-width: 94vw;
+    padding: 0 0 5vw 0;
   }
 }

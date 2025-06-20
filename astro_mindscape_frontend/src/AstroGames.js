@@ -1,228 +1,173 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import zodiacData from "./zodiacData";
 
-// PUBLIC_INTERFACE
+// Lazy load all mini games
+const miniGames = [
+  {
+    key: "magicNumber",
+    name: "Magic Number",
+    emoji: "🎯",
+    component: lazy(() => import("./games/MagicNumberGame")),
+    desc: "Guess the magic number! Fast simple fun.",
+  },
+  {
+    key: "reaction",
+    name: "Reaction Speed",
+    emoji: "⏱️",
+    component: lazy(() => import("./games/ReactionTestGame")),
+    desc: "How quick are you? Click when the color turns.",
+  },
+  {
+    key: "rps",
+    name: "Rock Paper Scissors",
+    emoji: "✊✋✌️",
+    component: lazy(() => import("./games/RockPaperScissors")),
+    desc: "Classic hand battle vs the computer.",
+  },
+  {
+    key: "memory",
+    name: "Memory Match",
+    emoji: "🃏",
+    component: lazy(() => import("./games/MemoryMiniGame")),
+    desc: "Flip and match pairs: can you clear the grid?",
+  },
+  {
+    key: "fizzbuzz",
+    name: "FizzBuzz Mini",
+    emoji: "🔢",
+    component: lazy(() => import("./games/FizzBuzzGame")),
+    desc: "Type the next FizzBuzz in the sequence.",
+  }
+];
+
+function useEscapeToClose(handler, open) {
+  React.useEffect(() => {
+    if (!open) return;
+    function onKey(e) {
+      if (e.key === "Escape") handler();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [handler, open]);
+}
+
+// Blurry fade-in modal overlay for games
+function GameModal({ children, open, onClose }) {
+  useEscapeToClose(onClose, open);
+
+  if (!open) return null;
+  return (
+    <div
+      className="astro-game-modal-blur"
+      onClick={onClose}
+      style={{
+        position: "fixed",
+        zIndex: 2000,
+        top: 0, left: 0, width: "100vw", height: "100vh",
+        background: "rgba(14,21,35,0.6)",
+        backdropFilter: "blur(12px) saturate(115%)",
+        WebkitBackdropFilter: "blur(12px) saturate(115%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        transition: "background 0.3s",
+        animation: "fadeIn 0.57s cubic-bezier(.7,0,.23,.99)",
+      }}
+      tabIndex={-1}
+      aria-label="Game modal overlay"
+      role="dialog"
+    >
+      {/* Prevent click propagation from closing when clicking modal itself */}
+      <div
+        className="astro-game-modal-content fade-in"
+        onClick={e => e.stopPropagation()}
+        style={{
+          background: "rgba(24,28,39,0.93)",
+          borderRadius: "22px",
+          boxShadow: "0 10px 40px 0 #040c16cc",
+          padding: "0 0 10px 0",
+          minWidth: 340,
+          maxWidth: "98vw",
+          minHeight: 130,
+          maxHeight: "90vh",
+          overflowY: "auto",
+          outline: "2.5px solid #03ffd523"
+        }}
+      >
+        {children}
+        <button
+          className="btn"
+          onClick={onClose}
+          style={{
+            margin: "15px auto 2px",
+            display: "block",
+            background: "#00ffe1",
+            color: "#151d29",
+            borderRadius: "11px"
+          }}
+          tabIndex={0}
+        >Close</button>
+      </div>
+    </div>
+  );
+}
 /**
- * Fun astrology mini-games. Includes: sign personality quiz, emoji match.
+ * Fun astrology mini-games as a grid; clicking one launches it in a modal, with fade-in and frosted glass effect.
  */
-function AstroGames({ sign }) {
-  // Main game: choose personality/emoji/result screens
-  const [step, setStep] = useState("choose");
+function AstroGames() {
+  const [modalKey, setModalKey] = useState(null);
 
-  // For quiz track
-  const [answers, setAnswers] = useState([]); // Personality quiz answers (indices)
-  const [quizScore, setQuizScore] = useState(null);
-
-  // For emoji match track
-  const [emojiData, setEmojiData] = useState(null); // { correctAnswer, opts }
-  const [emojiSelected, setEmojiSelected] = useState(null);
-  const [emojiGameOver, setEmojiGameOver] = useState(false);
-
-  // Questions for personality quiz
-  const questions = [
-    {
-      q: "Your ideal weekend is...",
-      options: [
-        { a: "Leading an adventure", sign: "Aries" },
-        { a: "Luxury and calm at home", sign: "Taurus" },
-        { a: "Meeting new faces", sign: "Gemini" },
-        { a: "Time with close family", sign: "Cancer" },
-      ],
-    },
-    {
-      q: "Your top skill is...",
-      options: [
-        { a: "Dramatic self-expression", sign: "Leo" },
-        { a: "Complex analysis", sign: "Virgo" },
-        { a: "Mediating conflict", sign: "Libra" },
-        { a: "Mastering your passion", sign: "Scorpio" },
-      ],
-    },
-    {
-      q: "You recharge by...",
-      options: [
-        { a: "Travel and learning", sign: "Sagittarius" },
-        { a: "Building your empire", sign: "Capricorn" },
-        { a: "Inventing something new", sign: "Aquarius" },
-        { a: "Dreaming, swimming or art", sign: "Pisces" },
-      ],
-    },
-    {
-      q: "Biggest challenge?",
-      options: [
-        { a: "Impatience", sign: "Aries" },
-        { a: "Stubbornness", sign: "Taurus" },
-        { a: "Scattered focus", sign: "Gemini" },
-        { a: "Over-sensitivity", sign: "Cancer" },
-      ],
-    },
-  ];
-
-  // Handle quiz answer selection
-  function handleChooseQuiz(idx) {
-    const next = [...answers, idx];
-    setAnswers(next);
-
-    if (next.length === questions.length) {
-      // Compute result
-      let allSigns = [];
-      questions.forEach((qq, i) => {
-        allSigns.push(qq.options[next[i]].sign);
-      });
-      // Get the sign that occurred the most
-      const tally = {};
-      allSigns.forEach((s) => (tally[s] = (tally[s] || 0) + 1));
-      let res = Object.entries(tally).sort((a, b) => b[1] - a[1]);
-      const result = res[0][0];
-      setQuizScore(result);
-      setStep("result");
-    }
-  }
-
-  // Reset quiz
-  function resetQuiz() {
-    setQuizScore(null);
-    setAnswers([]);
-    setStep("quiz");
-  }
-
-  // Start quiz
-  function startQuiz() {
-    setQuizScore(null);
-    setAnswers([]);
-    setStep("quiz");
-  }
-
-  // Prepare emoji match data randomly
-  function initEmojiMatch() {
-    const all = zodiacData.allSigns;
-    let qIndex = Math.floor(Math.random() * all.length);
-    const correctAnswer = all[qIndex];
-    let others = all.filter((z) => z !== correctAnswer);
-    others = others.sort(() => Math.random() - 0.5);
-    let opts = [correctAnswer, ...others.slice(0, 3)].sort(() => Math.random() - 0.5);
-
-    setEmojiData({ correctAnswer, opts });
-    setEmojiSelected(null);
-    setEmojiGameOver(false);
-    setStep("emoji");
-  }
-
-  // Handle emoji select
-  function handleEmojiSelect(opt) {
-    setEmojiSelected(opt);
-    setEmojiGameOver(true);
-  }
-
-  // UI Renderings
-  if (step === "choose") {
-    return (
-      <section className="data-section flex flex-col items-center">
-        <h2 className="text-xl font-bold mb-2">Astro Mini Games</h2>
-        <button className="btn mb-2" onClick={startQuiz}>
-          Astrology Personality Quiz
-        </button>
-        <button className="btn mb-2" onClick={initEmojiMatch}>
-          Zodiac Emoji Match
-        </button>
-      </section>
-    );
-  }
-
-  if (step === "quiz") {
-    const current = answers.length;
-    if (current < questions.length) {
-      const q = questions[current];
-      return (
-        <section className="data-section">
-          <div className="flex flex-col items-center">
-            <div className="mb-2 font-bold">{q.q}</div>
-            <div className="flex flex-col gap-2">
-              {q.options.map((opt, i) => (
-                <button key={i} className="btn" onClick={() => handleChooseQuiz(i)} tabIndex={0}>
-                  {opt.a}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    } else {
-      // Quiz is complete, but the result logic is handled above
-      // This branch will be very brief
-      return null;
-    }
-  }
-
-  if (step === "result") {
-    return (
-      <section className="data-section flex flex-col items-center">
-        <div className="font-bold">
-          Your star match: <span className="text-cyan-400">{quizScore}</span>{" "}
-          {zodiacData[quizScore].emoji}
-        </div>
-        <div className="mb-2">{zodiacData[quizScore].summary}</div>
-        <button className="btn" onClick={resetQuiz}>
-          Play Again
-        </button>
-        <button className="btn mt-1" onClick={() => setStep("choose")}>
-          Astro Games Home
-        </button>
-      </section>
-    );
-  }
-
-  if (step === "emoji" && emojiData) {
-    const { correctAnswer, opts } = emojiData;
-    return (
-      <section className="data-section">
-        <div className="flex flex-col items-center">
-          <div className="font-semibold mb-2">
-            Which sign uses this emoji?
-            <span className="ml-3 text-2xl">{zodiacData[correctAnswer].emoji}</span>
-          </div>
-          <div className="flex flex-wrap gap-2 mb-2">
-            {opts.map((opt) => (
-              <button
-                key={opt}
-                className={`btn ${
-                  emojiGameOver && opt === correctAnswer
-                    ? "bg-green-500 text-white"
-                    : ""
-                }
-                ${emojiGameOver && emojiSelected === opt && opt !== correctAnswer
-                  ? "bg-red-400 text-white"
-                  : ""}
-                `}
-                disabled={emojiGameOver}
-                onClick={() => handleEmojiSelect(opt)}
-              >
-                {opt}
-              </button>
-            ))}
-          </div>
-          {emojiGameOver && (
-            <div className="mt-2">
-              {emojiSelected === correctAnswer
-                ? "🌟 Correct!"
-                : `Oops! That was ${correctAnswer} ${zodiacData[correctAnswer].emoji}`}
-            </div>
-          )}
-          {emojiGameOver && (
-            <>
-              <button className="btn mt-2" onClick={initEmojiMatch}>
-                Play again
-              </button>
-              <button className="btn mt-2" onClick={() => setStep("choose")}>
-                Astro Games Home
-              </button>
-            </>
-          )}
-        </div>
-      </section>
-    );
-  }
-
-  return null;
+  return (
+    <section>
+      <h2 style={{fontWeight: 700, textAlign: "center", margin: "17px 0 0"}}>Astro Mini Games</h2>
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(190px,1fr))",
+        gap: 18,
+        margin: "30px auto 15px",
+        maxWidth: 780
+      }}>
+        {miniGames.map(game => (
+          <button
+            key={game.key}
+            className="game-card fade-in"
+            tabIndex={0}
+            style={{
+              cursor: "pointer",
+              background: "rgba(255,255,255,0.07)",
+              border: "none",
+              outline: "none",
+              transition: "box-shadow 0.19s, transform 0.14s",
+              boxShadow: modalKey === game.key ? "0 4px 18px #00ffe122" : "0 2px 12px #0cafdd14",
+              color: "#fff"
+            }}
+            onClick={() => setModalKey(game.key)}
+            aria-label={game.name}
+          >
+            <span style={{fontSize: "2.1rem", display: "block", marginBottom: 4}}>{game.emoji}</span>
+            <span style={{fontWeight: 600, fontSize: "1.11rem"}}>{game.name}</span>
+            <div style={{fontSize: 13, color: "#aee", marginTop: 5, minHeight: 26}}>{game.desc}</div>
+          </button>
+        ))}
+      </div>
+      <GameModal open={!!modalKey} onClose={() => setModalKey(null)}>
+        <Suspense fallback={<div style={{
+          padding: 48, textAlign: "center"
+        }}>Loading game...</div>}>
+          {modalKey &&
+            (() => {
+              const game = miniGames.find(g => g.key === modalKey);
+              if (!game) return <div>Not found</div>;
+              const Comp = game.component;
+              return <Comp />;
+            })()
+          }
+        </Suspense>
+      </GameModal>
+      <div style={{textAlign: "center", marginTop: 18, color: "#ccd", fontSize: "0.99em"}}>
+        <em>Tip: Close the game with ESC, or by clicking outside the pop-up.</em>
+      </div>
+    </section>
+  );
 }
 export default AstroGames;
