@@ -194,41 +194,100 @@ body {
 
 /* NavBar buttons enhancements */
 .navbar .btn, .navbar .btn-large {
-  min-width: 52px !important;
-  min-height: 46px !important;
-  max-width: 52px !important;
-  max-height: 46px !important;
-  width: 52px !important;
-  height: 46px !important;
-  color: #fff !important;
-  font-weight: 600;
+  min-width: 60px !important;
+  min-height: 50px !important;
+  max-width: unset !important;
+  max-height: unset !important;
+  width: auto !important;
+  height: auto !important;
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: var(--button-text-color, var(--text-color)) !important;
+  letter-spacing: 0.01em;
   box-shadow: none;
+  padding: 0.7em 1.7em !important;
+  border-radius: 8px;
   position: relative;
+  background: var(--button-bg, var(--primary));
   transition: 
     background 0.2s cubic-bezier(.3,0,.65,1),
-    color 0.17s cubic-bezier(.55,0,.55,1),
+    color 0.18s cubic-bezier(.55,0,.55,1),
     box-shadow 0.19s cubic-bezier(.86,0,.07,1),
     transform 0.13s cubic-bezier(.4,0,.2,1);
+  outline: none;
 }
 
-/* NavBar button font color is now always white */
+:root {
+  --button-bg: var(--primary);
+  --button-text-color: var(--primary-dark);
+}
+html.light, :root.light, body.light {
+  --button-bg: var(--primary);
+  --button-text-color: var(--primary-dark);
+}
+html.dark, :root.dark, body.dark {
+  --button-bg: var(--primary);
+  --button-text-color: #151b2c;
+}
+
+/* Ensure NavBar button text remains visible in all states */
 .navbar .btn, 
 .navbar .btn-large, 
 .navbar .btn:active, 
 .navbar .btn-large:active {
-  color: #fff !important;
+  color: var(--button-text-color, var(--text-color)) !important;
+  background: var(--button-bg, var(--primary));
 }
 
+/* On hover, invert button colors for accessibility */
 .navbar .btn:hover, .navbar .btn-large:hover {
-  box-shadow: 0 0 0 5px #fff !important; /* white shadow, 5px spread */
-  color: #fff !important;
-  background: #3099ff;
-  filter: brightness(1.06);
+  box-shadow: 0 0 0 5px var(--primary) !important;
+  color: var(--primary) !important;
+  background: var(--primary-dark) !important;
+  filter: brightness(1.08);
   z-index: 1;
 }
 
+/* Active/selected mode */
+.navbar .btn.btn-large,
 .navbar .btn-large {
-  font-size: 1.13rem;
+  color: var(--primary-dark, #181f36) !important;
+  background: var(--accent, #3099ff) !important;
+}
+
+/* Touch feedback */
+.navbar .btn:active,
+.navbar .btn-large:active {
+  transform: scale(0.98);
+}
+
+/* Font sizing for extra clarity */
+.navbar .btn,
+.navbar .btn-large {
+  font-size: 1.17rem;
+  font-weight: 700;
+  padding: 0.85em 2.1em !important;
+  border-radius: 12px;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 530px) {
+  .navbar {
+    padding: 13px 3px;
+  }
+  .btn, .btn-large, .navbar .btn, .navbar .btn-large {
+    padding: 0.55em 1.2em !important;
+    font-size: 1.02rem !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .hero {
+    padding-top: 90px;
+    padding-bottom: 22px;
+  }
 }
 
 /* Override for active/selected nav */
