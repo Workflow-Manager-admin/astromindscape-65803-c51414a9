@@ -7,43 +7,62 @@ import React from "react";
 function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
   return (
     <nav
-      className={`navbar shadow-md ${
-        theme === "dark"
-          ? "bg-[#121d2d] text-white"
-          : "bg-gradient-to-r from-sky-100 via-yellow-50 to-white text-gray-800"
-      } fixed top-0 left-0 w-full z-40`}
-      style={{ borderBottom: "1.5px solid var(--border-color, #d6e4f0)" }}
+      className="navbar"
+      style={{
+        borderBottom: "1.5px solid var(--border-color, #d6e4f0)"
+      }}
     >
-      <div className="container flex flex-row items-center justify-between py-2">
-        <div className="logo flex items-center font-bold gap-2 select-none text-lg">
-          <span className="logo-symbol" role="img" aria-label="logo">
+      <div style={{
+        maxWidth: 950,
+        margin: "0 auto",
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
+      }}>
+        <div className="logo" style={{
+          fontWeight: 700,
+          fontSize: "1.15rem",
+          letterSpacing: "1px",
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+          userSelect: "none"
+        }}>
+          <span className="logo-symbol" role="img" aria-label="logo" style={{ color: "#e87a41", fontSize: "1.4rem" }}>
             ★
           </span>
           ZodiacPulse Lite
         </div>
         {/* Navigation tabs */}
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           {tabs.map((t) => (
             <button
               key={t.key}
-              className={`btn px-3 py-2 rounded-md ${
-                activeTab === t.key
-                  ? "btn-large bg-accent font-bold scale-105 shadow"
-                  : ""
-              }`}
+              className={`btn${activeTab === t.key ? " btn-large" : ""}`}
               onClick={() => setActiveTab(t.key)}
               aria-label={t.label}
               tabIndex="0"
-              style={{ minWidth: 48 }}
+              style={{
+                minWidth: 48,
+                fontWeight: activeTab === t.key ? 700 : 500,
+                boxShadow: activeTab === t.key ? "0 3px 12px 0 #3360f633" : undefined
+              }}
             >
-              <span className="mr-1">{t.emoji}</span>
-              <span className="hidden xs:inline">{t.label}</span>
+              <span style={{ marginRight: 6 }}>{t.emoji}</span>
+              <span style={{ display: "inline" }}>{t.label}</span>
             </button>
           ))}
           <button
-            className="ml-2 btn btn-large"
+            className="btn btn-large"
             title="Toggle light/dark mode"
-            style={{ borderWidth: 0, paddingInline: 16, fontSize: "1em" }}
+            style={{
+              borderWidth: 0,
+              paddingInline: 16,
+              fontSize: "1em",
+              marginLeft: 12
+            }}
             onClick={toggleTheme}
             aria-label="toggle dark mode"
           >

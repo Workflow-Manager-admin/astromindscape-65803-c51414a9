@@ -8,16 +8,23 @@ import planetsData from "./planetsData";
 function PlanetMeanings() {
   return (
     <section className="data-section">
-      <h2 className="text-xl font-bold mb-2">Planets & Meanings</h2>
-      <ul className="ml-5 list-disc text-sm mb-2">
+      <h2 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: 12 }}>Planets & Meanings</h2>
+      <ul style={{
+        marginLeft: 22,
+        fontSize: 15,
+        marginBottom: 18,
+        listStyle: "disc"
+      }}>
         {planetsData.allPlanets.map((p) => (
-          <li key={p}>
-            <span className="font-semibold">{planetsData[p].symbol}&nbsp;{planetsData[p].name}:</span>
-            <span className="ml-1">{planetsData[p].meaning}</span>
+          <li key={p} style={{ marginBottom: 2 }}>
+            <span style={{ fontWeight: 600 }}>
+              {planetsData[p].symbol}&nbsp;{planetsData[p].name}:
+            </span>
+            <span style={{ marginLeft: 6 }}>{planetsData[p].meaning}</span>
           </li>
         ))}
       </ul>
-      <div className="text-xs text-gray-400 mt-4">
+      <div style={{ fontSize: 13, color: "#99bbcc", marginTop: 24 }}>
         <em>
           Planets represent universal life principles and different energies in astrology.
         </em>

@@ -7,10 +7,27 @@ import zodiacData from "./zodiacData";
  */
 function ZodiacSelector({ sunSign, setSunSign }) {
   return (
-    <div className="flex flex-col gap-1 mb-3 items-center">
-      <label className="mb-2 font-medium">Your Sun Sign:</label>
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: 4,
+      marginBottom: 18
+    }}>
+      <label style={{ marginBottom: 10, fontWeight: 500 }}>
+        Your Sun Sign:
+      </label>
       <select
-        className="border rounded px-4 py-2 focus:ring-2 focus:ring-blue-300 bg-gray-900 text-white dark:bg-gray-900 dark:text-white shadow-sm"
+        style={{
+          border: "1.5px solid var(--border-color, #26516055)",
+          borderRadius: 8,
+          padding: "9px 18px",
+          background: "#131f2d",
+          color: "#fff",
+          fontWeight: 500,
+          fontSize: "1.06em",
+          boxShadow: "0 2px 8px 0 #00000018"
+        }}
         value={sunSign}
         onChange={e => setSunSign(e.target.value)}
         aria-label="Select your sun sign"

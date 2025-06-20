@@ -10,33 +10,43 @@ function SignProfile({ sign }) {
 
   return (
     <section className="data-section">
-      <h2 className="text-2xl font-bold mb-2">
+      <h2 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: 12 }}>
         {d.emoji} {sign} Profile
       </h2>
-      <div className="mb-2">
-        <span className="font-semibold text-cyan-400">Dates:</span>{" "}
+      <div style={{ marginBottom: 10 }}>
+        <span style={{ fontWeight: 600, color: "#25ecdb" }}>Dates:</span>{" "}
         {d.dates}
       </div>
-      <div className="mb-2">
-        <span className="font-semibold text-cyan-400">Element:</span>{" "}
+      <div style={{ marginBottom: 10 }}>
+        <span style={{ fontWeight: 600, color: "#25ecdb" }}>Element:</span>{" "}
         {d.element} &nbsp; | &nbsp;
-        <span className="font-semibold text-cyan-400">Modality:</span> {d.modality}
+        <span style={{ fontWeight: 600, color: "#25ecdb" }}>Modality:</span> {d.modality}
       </div>
-      <p className="mb-2">{d.summary}</p>
-      <span className="font-semibold text-cyan-400">Strengths:</span>
-      <ul className="ml-5 list-disc text-sm mb-2">
+      <p style={{ marginBottom: 10 }}>{d.summary}</p>
+      <span style={{ fontWeight: 600, color: "#25ecdb" }}>Strengths:</span>
+      <ul style={{
+        marginLeft: 22,
+        fontSize: 15,
+        marginBottom: 10,
+        listStyle: "disc"
+      }}>
         {d.strengths.map((s, i) => (
           <li key={i}>{s}</li>
         ))}
       </ul>
-      <span className="font-semibold text-cyan-400">Challenges:</span>
-      <ul className="ml-5 list-disc text-sm mb-2">
+      <span style={{ fontWeight: 600, color: "#25ecdb" }}>Challenges:</span>
+      <ul style={{
+        marginLeft: 22,
+        fontSize: 15,
+        marginBottom: 10,
+        listStyle: "disc"
+      }}>
         {d.challenges.map((c, i) => (
           <li key={i}>{c}</li>
         ))}
       </ul>
-      <span className="font-semibold text-cyan-400">Famous {sign}s:</span>
-      <div className="ml-2 text-sm">{d.famous}</div>
+      <span style={{ fontWeight: 600, color: "#25ecdb" }}>Famous {sign}s:</span>
+      <div style={{ marginLeft: 8, fontSize: 14 }}>{d.famous}</div>
     </section>
   );
 }

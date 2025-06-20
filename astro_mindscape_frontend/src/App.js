@@ -55,13 +55,7 @@ function App() {
   ];
 
   return (
-    <div
-      className={`app min-h-screen ${
-        theme === "dark"
-          ? "bg-gradient-to-br from-[#0d132c] via-[#002f47] to-[#09101c] text-white"
-          : "bg-gradient-to-br from-blue-100 via-white to-yellow-50 text-gray-900"
-      }`}
-    >
+    <div className="app">
       <NavBar
         tabs={tabs}
         activeTab={tab}
@@ -86,11 +80,11 @@ function App() {
         {tab === "about" && (
           <section className="data-section">
             <h2>ZodiacPulse Lite</h2>
-            <p className="mb-2">
-              <span className="font-semibold">ZodiacPulse Lite</span> is a lightweight, engaging and <strong>API-free astrology app</strong>.<br />
+            <p style={{ marginBottom: "1em", fontWeight: 500 }}>
+              <span style={{ fontWeight: 600 }}>ZodiacPulse Lite</span> is a lightweight, engaging and <strong>API-free astrology app</strong>.<br />
               All content is generated <strong>locally in your browser</strong> with no network required. ✨
             </p>
-            <ul className="ml-5 list-disc text-sm mb-3">
+            <ul style={{ marginLeft: 22, fontSize: 15, marginBottom: 18, listStyle: "disc" }}>
               <li>Interactive zodiac selector/daily prediction</li>
               <li>Detailed zodiac, planets and houses info</li>
               <li>Fun mini astro quiz/games</li>
@@ -98,16 +92,23 @@ function App() {
               <li>Modern, responsive design</li>
               <li>Toggleable dark/light mode</li>
             </ul>
-            <p className="mb-2">
+            <p style={{ marginBottom: "1em" }}>
               <em>
-                Made with React, Tailwind-style CSS, and lots of starry wisdom.<br />
+                Made with React, vanilla CSS, and lots of starry wisdom.<br />
                 <a href="https://github.com/kavia-ai/zodiacpulse" style={{ color: "#00ffff" }}>Source code</a>
               </em>
             </p>
           </section>
         )}
-        <footer className="mt-16 text-xs text-center text-gray-400 select-none pb-6">
-          <hr className="my-4" />
+        <footer style={{
+          marginTop: 60,
+          fontSize: "12px",
+          textAlign: "center",
+          color: "#99aabb",
+          userSelect: "none",
+          paddingBottom: 24
+        }}>
+          <hr style={{ margin: "16px 0" }} />
           <span>ZodiacPulse Lite &copy; 2024 • No APIs • All data local • Modern astrology for everyone</span>
         </footer>
       </main>

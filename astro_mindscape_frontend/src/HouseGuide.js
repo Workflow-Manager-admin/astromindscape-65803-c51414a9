@@ -8,16 +8,21 @@ import housesData from "./housesData";
 function HouseGuide() {
   return (
     <section className="data-section">
-      <h2 className="text-xl font-bold mb-2">Astrological Houses</h2>
-      <ul className="ml-5 list-disc text-sm mb-2">
+      <h2 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: 12 }}>Astrological Houses</h2>
+      <ul style={{
+        marginLeft: 22,
+        fontSize: "15px",
+        marginBottom: 18,
+        listStyle: "disc"
+      }}>
         {housesData.map((h, idx) => (
-          <li key={idx}>
-            <span className="font-semibold">{h.number}. {h.name}:</span>
-            <span className="ml-2">{h.meaning}</span>
+          <li key={idx} style={{ marginBottom: 2 }}>
+            <span style={{ fontWeight: 600 }}>{h.number}. {h.name}:</span>
+            <span style={{ marginLeft: 7 }}>{h.meaning}</span>
           </li>
         ))}
       </ul>
-      <div className="text-xs text-gray-400 mt-4">
+      <div style={{ fontSize: 13, color: "#99bbcc", marginTop: 24 }}>
         <em>
           The houses show where life events happen—each one represents a different area of existence.
         </em>
