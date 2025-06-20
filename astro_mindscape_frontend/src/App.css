@@ -89,6 +89,53 @@ body {
   color: var(--primary);
   user-select: none;
 }
+
+/* Hamburger icon transition for ZodiacPulse NavBar logo */
+.logo-hamburger {
+  cursor: pointer;
+  transition: color 0.16s;
+  position: relative;
+  width: 42px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+.logo-hamburger-text {
+  transition: opacity 0.14s;
+}
+.logo-hamburger-icon {
+  width: 28px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.14s;
+}
+.logo-hamburger-icon span {
+  display: block;
+  width: 25px;
+  height: 3.5px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 2px #fff;
+}
+/* Show hamburger on hover/focus, hide label */
+.logo-hamburger:hover .logo-hamburger-text,
+.logo-hamburger:focus-within .logo-hamburger-text {
+  opacity: 0;
+}
+.logo-hamburger:hover .logo-hamburger-icon,
+.logo-hamburger:focus-within .logo-hamburger-icon {
+  opacity: 1;
+}
+
 .logo-symbol {
   color: var(--kavia-orange);
   font-size: 1.4rem;

@@ -38,16 +38,17 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
             minHeight: 44,
             color: "var(--primary)",
             paddingLeft: 2,
+            cursor: "pointer",
           }}
+          aria-label="ZodiacPulse Lite logo and main menu"
         >
-          <span className="logo-hamburger-text" aria-label="ZodiacPulse Lite">ZodiacPulse Lite</span>
+          <span className="logo-hamburger-text" aria-label="ZodiacPulse Lite">
+            ZodiacPulse Lite
+          </span>
+          {/* Hamburger icon rendered via 3 styled spans */}
           <span
             className="logo-hamburger-icon"
-            aria-label="Open menu"
-            style={{
-              pointerEvents: "none",
-              opacity: 0,
-            }}
+            aria-hidden="true"
           >
             <span></span>
             <span></span>
