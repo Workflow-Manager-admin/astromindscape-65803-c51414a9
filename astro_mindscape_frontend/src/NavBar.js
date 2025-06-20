@@ -3,82 +3,47 @@ import React from "react";
 // PUBLIC_INTERFACE
 /**
  * Top nav bar for tab/page switching and theme toggle.
+ * Minimalist, Apple.com-inspired structure.
  */
 function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
   return (
-    <nav
-      className="navbar"
-      style={{
-        borderBottom: "1.5px solid var(--border-color, #d6e4f0)"
-      }}
-    >
-      <div style={{
-        maxWidth: 950,
-        margin: "0 auto",
-        width: "100%",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between"
-      }}>
-        {/* ZodiacPulse logo with hamburger hover */}
-        <div
-          className="logo logo-hamburger"
+    <nav className="navbar">
+      <div className="navbar-inner">
+        {/* Left: Logo/title (no extraneous wrappers) */}
+        <a
+          href="/"
           tabIndex={0}
+          className="navbar-logo"
+          aria-label="ZodiacPulse Lite home"
           style={{
-            fontWeight: 700,
-            fontSize: "1.15rem",
-            letterSpacing: "1px",
-            display: "flex",
-            alignItems: "center",
-            userSelect: "none",
-            position: "relative",
-            width: 48,
-            minWidth: 48,
-            minHeight: 44,
-            color: "var(--primary)",
-            paddingLeft: 2,
-            cursor: "pointer",
+            textDecoration: "none",
+            color: "inherit",
+            fontWeight: 600,
+            letterSpacing: 0,
           }}
-          aria-label="ZodiacPulse Lite logo and main menu"
         >
-          <span className="logo-hamburger-text" aria-label="ZodiacPulse Lite">
-            ZodiacPulse Lite
-          </span>
-          {/* Hamburger icon rendered via 3 styled spans */}
-          <span
-            className="logo-hamburger-icon"
-            aria-hidden="true"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        {/* Navigation tabs */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          ZodiacPulse Lite
+        </a>
+        {/* Right: Navigation links horizontal */}
+        <div className="navbar-links">
           {tabs.map((t) => (
             <button
               key={t.key}
-              className={`btn${activeTab === t.key ? " btn-large" : ""}`}
-              onClick={() => setActiveTab(t.key)}
+              className={`navbar-link${activeTab === t.key ? " active" : ""}`}
+              aria-current={activeTab === t.key ? "page" : undefined}
               aria-label={t.label}
-              tabIndex="0"
+              tabIndex={0}
+              onClick={() => setActiveTab(t.key)}
+              type="button"
             >
               {t.label}
             </button>
           ))}
           <button
-            className="btn btn-large"
-            title="Toggle light/dark mode"
-            style={{
-              borderWidth: 0,
-              paddingInline: 16,
-              fontSize: "1em",
-              marginLeft: 12,
-            }}
+            className="navbar-theme-toggle"
             onClick={toggleTheme}
             aria-label={`toggle ${theme === "dark" ? "light" : "dark"} mode`}
+            type="button"
           >
             {theme === "dark" ? "Light" : "Dark"}
           </button>
@@ -87,4 +52,5 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
     </nav>
   );
 }
+
 export default NavBar;
