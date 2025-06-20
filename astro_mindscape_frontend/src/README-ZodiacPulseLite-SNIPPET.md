@@ -26,6 +26,15 @@ Source structure:
 - `ZodiacSelector.js`, `DailyPrediction.js`, `SignProfile.js`
 - `PlanetMeanings.js`, `HouseGuide.js`, `AstroGames.js`
 - `zodiacData.js`, `planetsData.js`, `housesData.js` (static data)
+- `StarSelectionGrid.js` (visually appealing, selectable grid of stars for user input)
+
+**Component integration tip:**  
+To let users choose a star and react to their selection, import and use the grid as follows:
+```jsx
+import StarSelectionGrid from "./StarSelectionGrid";
+// ...
+<StarSelectionGrid gridSize={5} onSelect={(star) => setStarChoice(star)} />
+```
 
 Best viewed in Chrome/Edge/Safari/Firefox.  
 —

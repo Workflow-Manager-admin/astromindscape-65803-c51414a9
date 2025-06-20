@@ -335,6 +335,53 @@ hr {
   opacity: 0.18;
 }
 
+/* --- Star Selection Grid Styles --- */
+.star-grid-container {
+  user-select: none;
+}
+
+/* Star button (unstyled for fast hover/focus/selected state) */
+.star-btn {
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  border: 2px solid var(--border-color, #ccd8ec44);
+  color: var(--kavia-dark, #ffd700);
+  font-size: 30px;
+  transition: all 0.17s;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1.5px 6px 0 #00000011;
+  margin: 2px;
+  padding: 0;
+}
+
+.star-btn:focus {
+  border-color: var(--primary, #00ffff);
+  box-shadow: 0 2px 13px 0 #00ffff30;
+}
+
+.star-btn:hover {
+  filter: brightness(1.18);
+  background: var(--primary, #00ffff);
+  color: #fff;
+}
+
+.star-btn-selected,
+.star-btn.star-btn-selected {
+  background: var(--kavia-orange, #e87a41);
+  color: #fff;
+  border: 2.5px solid var(--kavia-orange, #e87a41);
+  filter: brightness(1.12) drop-shadow(0 0 4px #e87a41ba);
+  box-shadow: 0 0 19px 2px #e87a4188;
+  font-weight: 700;
+}
+
+
 /* Details summary (collapsible JSON/results) */
 details summary {
   cursor: pointer;
