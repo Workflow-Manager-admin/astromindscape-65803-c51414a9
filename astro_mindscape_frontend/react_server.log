@@ -7,72 +7,248 @@
 <i> [webpack-dev-server] On Your Network (IPv4): http://172.17.0.2:3000/
 <i> [webpack-dev-server] Content not from webpack is served from './public' directory
 Injecting EditorRootWrapper import: ../.ve/EditorRootWrapper
-asset bundle.js 1.47 MiB [emitted] (name: main)
+asset bundle.js 1.48 MiB [emitted] (name: main)
+asset src_games_MemoryMiniGame_js.bundle.js 5.87 KiB [emitted]
+asset src_games_RockPaperScissors_js.bundle.js 5.79 KiB [emitted]
+asset src_games_ReactionTestGame_js.bundle.js 5.7 KiB [emitted]
+asset src_games_MagicNumberGame_js.bundle.js 5.38 KiB [emitted]
+asset src_games_FizzBuzzGame_js.bundle.js 5.24 KiB [emitted]
 asset index.html 1.98 KiB [emitted]
-runtime modules 27.5 KiB 14 modules
-cacheable modules 1.33 MiB
+runtime modules 30.8 KiB 16 modules
+cacheable modules 1.34 MiB
   modules by path ./node_modules/ 1.24 MiB 31 modules
-  modules by path ./src/ 73.6 KiB
-    modules by path ./src/*.js 46.6 KiB 12 modules
-    modules by path ./src/*.css 26.9 KiB
+  modules by path ./src/ 87.7 KiB
+    modules by path ./src/*.js 44.5 KiB 12 modules
+    modules by path ./src/games/*.js 15.9 KiB 5 modules
+    modules by path ./src/*.css 27.3 KiB
       ./src/index.css 2.23 KiB [built] [code generated]
       + 3 modules
   modules by path ./.ve/ 15.1 KiB
     modules by path ./.ve/*.js 10.6 KiB 2 modules
-    modules by path ./.ve/*.css 2.93 KiB
-      ./.ve/EditorOverlay.css 2.25 KiB [built] [code generated]
-      ./node_modules/css-loader/dist/cjs.js!./.ve/EditorOverlay.css 697 bytes [built] [code generated]
+    modules by path ./.ve/*.css 2.93 KiB 2 modules
     ./.ve/EditorOverlay.jsx 1.58 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 1408 ms
-assets by status 1.98 KiB [cached] 1 asset
-assets by path *.js 1.54 MiB
-  assets by chunk 1.52 MiB (name: main)
-    asset bundle.js 1.48 MiB [emitted] (name: main)
-    asset main.d3c8e74ca32d43148a5a.hot-update.js 38.7 KiB [emitted] [immutable] [hmr] (name: main)
-  asset src_games_MemoryMiniGame_js.bundle.js 5.87 KiB [emitted]
-  asset src_games_RockPaperScissors_js.bundle.js 5.79 KiB [emitted]
-  asset src_games_ReactionTestGame_js.bundle.js 5.7 KiB [emitted]
-  asset src_games_MagicNumberGame_js.bundle.js 5.38 KiB [emitted]
-  asset src_games_FizzBuzzGame_js.bundle.js 5.24 KiB [emitted]
-asset main.d3c8e74ca32d43148a5a.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.52 MiB = bundle.js 1.48 MiB main.d3c8e74ca32d43148a5a.hot-update.js 38.7 KiB
-cached modules 1.32 MiB [cached] 51 modules
-runtime modules 30.8 KiB 16 modules
-javascript modules 25.9 KiB
-  ./src/AstroGames.js 10 KiB [built] [code generated]
-  ./src/games/MagicNumberGame.js 2.95 KiB [built] [code generated]
-  ./src/games/ReactionTestGame.js 3.33 KiB [built] [code generated]
-  ./src/games/RockPaperScissors.js 3.27 KiB [built] [code generated]
-  ./src/games/MemoryMiniGame.js 3.5 KiB [built] [code generated]
-  ./src/games/FizzBuzzGame.js 2.83 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 274 ms
-assets by status 30 KiB [cached] 6 assets
-assets by status 1.5 MiB [emitted]
-  asset bundle.js 1.48 MiB [emitted] (name: main)
-  asset main.f832d04113e4c0e5a649.hot-update.js 17.2 KiB [emitted] [immutable] [hmr] (name: main)
-  asset main.f832d04113e4c0e5a649.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.5 MiB = bundle.js 1.48 MiB main.f832d04113e4c0e5a649.hot-update.js 17.2 KiB
-cached modules 1.33 MiB [cached] 56 modules
-runtime modules 30.8 KiB 16 modules
-./src/AstroGames.js 11.8 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 83 ms
-assets by status 30 KiB [cached] 6 assets
+webpack 5.99.9 compiled successfully in 1698 ms
+assets by status 24.7 KiB [cached] 5 assets
 assets by status 1.49 MiB [emitted]
-  asset bundle.js 1.47 MiB [emitted] (name: main)
-  asset main.460ed22040798628f0ab.hot-update.js 10.8 KiB [emitted] [immutable] [hmr] (name: main)
-  asset main.460ed22040798628f0ab.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.49 MiB = bundle.js 1.47 MiB main.460ed22040798628f0ab.hot-update.js 10.8 KiB
-cached modules 1.33 MiB [cached] 56 modules
-runtime modules 30.8 KiB 16 modules
-./src/AstroGames.js 6.66 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 107 ms
-assets by status 30 KiB [cached] 6 assets
-assets by status 1.5 MiB [emitted]
   asset bundle.js 1.48 MiB [emitted] (name: main)
-  asset main.ce85414661b22db8dc75.hot-update.js 25.4 KiB [emitted] [immutable] [hmr] (name: main)
-  asset main.ce85414661b22db8dc75.hot-update.json 28 bytes [emitted] [immutable] [hmr]
-Entrypoint main 1.5 MiB = bundle.js 1.48 MiB main.ce85414661b22db8dc75.hot-update.js 25.4 KiB
-cached modules 1.32 MiB [cached] 56 modules
+  asset main.a7d75f9ef035a2caf793.hot-update.js 10.8 KiB [emitted] [immutable] [hmr] (name: main)
+  asset main.a7d75f9ef035a2caf793.hot-update.json 84 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.48 MiB main.a7d75f9ef035a2caf793.hot-update.js 10.8 KiB
+cached modules 1.33 MiB [cached] 55 modules
 runtime modules 30.8 KiB 16 modules
-./node_modules/css-loader/dist/cjs.js!./src/App.css 22 KiB [built] [code generated]
-webpack 5.99.9 compiled successfully in 86 ms
+./src/AstroGames.js 6.66 KiB [code generated]
+
+ERROR in ./src/AstroGames.js 34:37-67
+Module not found: Error: Can't resolve './games/FizzBuzzGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+resolve './games/FizzBuzzGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+  using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src/games/FizzBuzzGame)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame doesn't exist
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 73 ms
+assets by status 19.3 KiB [cached] 4 assets
+assets by status 1.49 MiB [emitted]
+  asset bundle.js 1.48 MiB [emitted] (name: main)
+  asset main.df47ae23326f5441057b.hot-update.js 10.8 KiB [emitted] [immutable] [hmr] (name: main)
+  asset main.df47ae23326f5441057b.hot-update.json 90 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.48 MiB main.df47ae23326f5441057b.hot-update.js 10.8 KiB
+cached modules 1.33 MiB [cached] 54 modules
+runtime modules 30.8 KiB 16 modules
+./src/AstroGames.js 6.66 KiB [code generated]
+
+ERROR in ./src/AstroGames.js 10:37-70
+Module not found: Error: Can't resolve './games/MagicNumberGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+resolve './games/MagicNumberGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+  using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src/games/MagicNumberGame)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/MagicNumberGame doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/MagicNumberGame.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/MagicNumberGame.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/MagicNumberGame doesn't exist
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 34:37-67
+Module not found: Error: Can't resolve './games/FizzBuzzGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+resolve './games/FizzBuzzGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+  using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src/games/FizzBuzzGame)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/games/FizzBuzzGame doesn't exist
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 2 errors in 39 ms
+assets by status 13.5 KiB [cached] 3 assets
+assets by status 1.49 MiB [emitted]
+  asset bundle.js 1.48 MiB [emitted] (name: main)
+  asset main.040fbeef40e9148af9f4.hot-update.js 10.7 KiB [emitted] [immutable] [hmr] (name: main)
+  asset main.040fbeef40e9148af9f4.hot-update.json 88 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.48 MiB main.040fbeef40e9148af9f4.hot-update.js 10.7 KiB
+cached modules 1.32 MiB [cached] 53 modules
+runtime modules 30.8 KiB 16 modules
+./src/AstroGames.js 6.66 KiB [code generated]
+
+ERROR in ./src/AstroGames.js 10:37-70
+Module not found: Error: Can't resolve './games/MagicNumberGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 28:37-69
+Module not found: Error: Can't resolve './games/MemoryMiniGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 34:37-67
+Module not found: Error: Can't resolve './games/FizzBuzzGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+3 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 3 errors in 34 ms
+assets by status 7.76 KiB [cached] 2 assets
+assets by status 1.49 MiB [emitted]
+  asset bundle.js 1.48 MiB [emitted] (name: main)
+  asset main.113da4437a8ec66e8d32.hot-update.js 10.7 KiB [emitted] [immutable] [hmr] (name: main)
+  asset main.113da4437a8ec66e8d32.hot-update.json 92 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.49 MiB = bundle.js 1.48 MiB main.113da4437a8ec66e8d32.hot-update.js 10.7 KiB
+cached modules 1.32 MiB [cached] 52 modules
+runtime modules 30.8 KiB 16 modules
+./src/AstroGames.js 6.66 KiB [code generated]
+
+ERROR in ./src/AstroGames.js 10:37-70
+Module not found: Error: Can't resolve './games/MagicNumberGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 16:37-71
+Module not found: Error: Can't resolve './games/ReactionTestGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 28:37-69
+Module not found: Error: Can't resolve './games/MemoryMiniGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 34:37-67
+Module not found: Error: Can't resolve './games/FizzBuzzGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+4 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 4 errors in 38 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.5 MiB
+  asset bundle.js 1.47 MiB [emitted] (name: main)
+  asset main.0265e6c5f8ebd4b2416c.hot-update.js 30 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.0265e6c5f8ebd4b2416c.hot-update.json 94 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.5 MiB = bundle.js 1.47 MiB main.0265e6c5f8ebd4b2416c.hot-update.js 30 KiB
+cached modules 1.32 MiB [cached] 51 modules
+runtime modules 27.5 KiB 14 modules
+./src/AstroGames.js 6.66 KiB [code generated]
+
+ERROR in ./src/AstroGames.js 10:37-70
+Module not found: Error: Can't resolve './games/MagicNumberGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 16:37-71
+Module not found: Error: Can't resolve './games/ReactionTestGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 22:37-72
+Module not found: Error: Can't resolve './games/RockPaperScissors' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 28:37-69
+Module not found: Error: Can't resolve './games/MemoryMiniGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+ERROR in ./src/AstroGames.js 34:37-67
+Module not found: Error: Can't resolve './games/FizzBuzzGame' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+ @ ./src/App.js 10:0-38 116:47-57
+ @ ./src/index.js 5:0-24 11:32-35
+
+5 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.99.9 compiled with 5 errors in 28 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.47 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.dcecdd7de262b54b5e9a.hot-update.js 12.7 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.dcecdd7de262b54b5e9a.hot-update.json 49 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.47 MiB = bundle.js 1.46 MiB main.dcecdd7de262b54b5e9a.hot-update.js 12.7 KiB
+cached modules 1.31 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 7.62 KiB [code generated]
+
+ERROR in ./src/App.js 10:0-38
+Module not found: Error: Can't resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+resolve './AstroGames' in '/home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src'
+  using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/package.json (relative path: ./src/AstroGames)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/AstroGames doesn't exist
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/AstroGames.js doesn't exist
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/AstroGames.jsx doesn't exist
+      as directory
+        /home/kavia/workspace/code-generation/astromindscape-65803-c51414a9/astro_mindscape_frontend/src/AstroGames doesn't exist
+ @ ./src/index.js 5:0-24 11:32-35
+
+webpack 5.99.9 compiled with 1 error in 28 ms
+assets by status 1.98 KiB [cached] 1 asset
+assets by path *.js 1.47 MiB
+  asset bundle.js 1.46 MiB [emitted] (name: main)
+  asset main.6b1787367bf15e36c5a6.hot-update.js 11.7 KiB [emitted] [immutable] [hmr] (name: main)
+asset main.6b1787367bf15e36c5a6.hot-update.json 28 bytes [emitted] [immutable] [hmr]
+Entrypoint main 1.47 MiB = bundle.js 1.46 MiB main.6b1787367bf15e36c5a6.hot-update.js 11.7 KiB
+cached modules 1.31 MiB [cached] 50 modules
+runtime modules 27.5 KiB 14 modules
+./src/App.js 6.93 KiB [built] [code generated]
+webpack 5.99.9 compiled successfully in 61 ms

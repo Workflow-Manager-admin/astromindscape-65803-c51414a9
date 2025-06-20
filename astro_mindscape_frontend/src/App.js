@@ -7,7 +7,6 @@ import DailyPrediction from "./DailyPrediction";
 import SignProfile from "./SignProfile";
 import PlanetMeanings from "./PlanetMeanings";
 import HouseGuide from "./HouseGuide";
-import AstroGames from "./AstroGames";
 
 import "./App.css";
 
@@ -45,11 +44,6 @@ function App() {
       document.body.classList.add("light");
     }
     window.localStorage.setItem("zp_theme", theme);
-
-    // Update CSS variables directly if necessary
-    // (optional: if dynamic tokens ever needed in JavaScript, e.g., for 3rd party libs)
-    // Example for strict environment: sync background explicitly
-    // document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background');
   }, [theme]);
 
   // PUBLIC_INTERFACE
@@ -63,7 +57,6 @@ function App() {
     { label: "Sign Profile", key: "profile", emoji: "🔮" },
     { label: "Planets", key: "planets", emoji: "🪐" },
     { label: "Houses", key: "houses", emoji: "🏠" },
-    { label: "Mini Games", key: "games", emoji: "🎲" },
     { label: "About", key: "about", emoji: "✨" },
   ];
 
@@ -89,7 +82,6 @@ function App() {
         {tab === "profile" && <SignProfile sign={sunSign} />}
         {tab === "planets" && <PlanetMeanings />}
         {tab === "houses" && <HouseGuide />}
-        {tab === "games" && <AstroGames sign={sunSign} />}
         {tab === "about" && (
           <section className="data-section">
             <h2>ZodiacPulse Lite</h2>
@@ -100,7 +92,7 @@ function App() {
             <ul style={{ marginLeft: 22, fontSize: 15, marginBottom: 18, listStyle: "disc" }}>
               <li>Interactive zodiac selector/daily prediction</li>
               <li>Detailed zodiac, planets and houses info</li>
-              <li>Fun mini astro quiz/games</li>
+              {/* Removed games list item */}
               <li>Offline usage — all data included</li>
               <li>Modern, responsive design</li>
               <li>Toggleable dark/light mode</li>
