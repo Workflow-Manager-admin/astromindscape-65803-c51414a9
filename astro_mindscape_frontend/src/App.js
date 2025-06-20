@@ -34,15 +34,22 @@ function App() {
     window.localStorage.setItem("zp_sunSign", sunSign);
   }, [sunSign]);
   useEffect(() => {
-    document.documentElement.className = ""; // Remove all, then add
+    // Remove both classes from html & body, then re-add correct one
+    document.documentElement.classList.remove("light", "dark");
+    document.body.classList.remove("light", "dark");
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
+      document.body.classList.add("dark");
     } else {
       document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
+      document.body.classList.add("light");
     }
     window.localStorage.setItem("zp_theme", theme);
+
+    // Update CSS variables directly if necessary
+    // (optional: if dynamic tokens ever needed in JavaScript, e.g., for 3rd party libs)
+    // Example for strict environment: sync background explicitly
+    // document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background');
   }, [theme]);
 
   // PUBLIC_INTERFACE
