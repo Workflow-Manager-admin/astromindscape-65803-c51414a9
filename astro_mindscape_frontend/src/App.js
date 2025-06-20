@@ -5,6 +5,7 @@ import PlanetsData from './PlanetsData';
 import AspectsData from './AspectsData';
 import NatalChart from './NatalChart';
 import GeoCityInput from './GeoCityInput';
+import DailyHoroscope from './DailyHoroscope';
 
 // PUBLIC_INTERFACE
 /**
@@ -40,6 +41,9 @@ function App() {
               <button className={`btn${tab === 'geo' ? ' btn-large' : ''}`} onClick={() => setTab('geo')}>
                 City→Geo/Astro
               </button>
+              <button className={`btn${tab === 'horoscope' ? ' btn-large' : ''}`} onClick={() => setTab('horoscope')}>
+                🌓 Horoscope
+              </button>
             </div>
           </div>
         </div>
@@ -53,6 +57,7 @@ function App() {
             {tab === 'planets' && <PlanetsData />}
             {tab === 'aspects' && <AspectsData />}
             {tab === 'geo' && <GeoCityInput />}
+            {tab === 'horoscope' && <DailyHoroscope />}
             <div className="description" style={{ marginTop: 32 }}>
               <hr style={{ opacity: 0.2 }} />
               <div>
