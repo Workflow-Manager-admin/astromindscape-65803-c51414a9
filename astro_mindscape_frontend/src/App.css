@@ -147,9 +147,12 @@ body {
 
 /* NavBar buttons enhancements */
 .navbar .btn, .navbar .btn-large {
-  min-width: 48px !important;
-  min-height: 44px !important;
-  max-height: 48px;
+  min-width: 52px !important;
+  min-height: 46px !important;
+  max-width: 52px !important;
+  max-height: 46px !important;
+  width: 52px !important;
+  height: 46px !important;
   color: #fff !important;
   font-weight: 600;
   box-shadow: none;
@@ -161,8 +164,16 @@ body {
     transform 0.13s cubic-bezier(.4,0,.2,1);
 }
 
+/* NavBar button font color is now always white */
+.navbar .btn, 
+.navbar .btn-large, 
+.navbar .btn:active, 
+.navbar .btn-large:active {
+  color: #fff !important;
+}
+
 .navbar .btn:hover, .navbar .btn-large:hover {
-  box-shadow: 0 0 0 5px #fff, 0 3px 20px 0 rgba(0,255,255,0.13);
+  box-shadow: 0 0 0 5px #fff !important; /* white shadow, 5px spread */
   color: #fff !important;
   background: #3099ff;
   filter: brightness(1.06);
