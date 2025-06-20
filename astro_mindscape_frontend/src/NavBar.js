@@ -21,15 +21,38 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
         alignItems: "center",
         justifyContent: "space-between"
       }}>
-        <div className="logo" style={{
-          fontWeight: 700,
-          fontSize: "1.15rem",
-          letterSpacing: "1px",
-          display: "flex",
-          alignItems: "center",
-          userSelect: "none"
-        }}>
-          ZodiacPulse Lite
+        {/* ZodiacPulse logo with hamburger hover */}
+        <div
+          className="logo logo-hamburger"
+          tabIndex={0}
+          style={{
+            fontWeight: 700,
+            fontSize: "1.15rem",
+            letterSpacing: "1px",
+            display: "flex",
+            alignItems: "center",
+            userSelect: "none",
+            position: "relative",
+            width: 48,
+            minWidth: 48,
+            minHeight: 44,
+            color: "var(--primary)",
+            paddingLeft: 2,
+          }}
+        >
+          <span className="logo-hamburger-text" aria-label="ZodiacPulse Lite">ZodiacPulse Lite</span>
+          <span
+            className="logo-hamburger-icon"
+            aria-label="Open menu"
+            style={{
+              pointerEvents: "none",
+              opacity: 0,
+            }}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </div>
         {/* Navigation tabs */}
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -40,11 +63,6 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
               onClick={() => setActiveTab(t.key)}
               aria-label={t.label}
               tabIndex="0"
-              style={{
-                minWidth: 48,
-                fontWeight: activeTab === t.key ? 700 : 500,
-                boxShadow: activeTab === t.key ? "0 3px 12px 0 #3360f633" : undefined
-              }}
             >
               {t.label}
             </button>
@@ -56,12 +74,12 @@ function NavBar({ tabs, activeTab, setActiveTab, theme, toggleTheme }) {
               borderWidth: 0,
               paddingInline: 16,
               fontSize: "1em",
-              marginLeft: 12
+              marginLeft: 12,
             }}
             onClick={toggleTheme}
-            aria-label="toggle dark mode"
+            aria-label={`toggle ${theme === "dark" ? "light" : "dark"} mode`}
           >
-            {theme === "dark" ? "Dark" : "Light"}
+            {theme === "dark" ? "Light" : "Dark"}
           </button>
         </div>
       </div>
